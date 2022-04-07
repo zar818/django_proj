@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block ms %} 
+    {% if messages %}
+        {% for message in messages %}
+            <div {% if message.tags %} class='alert alert-{{message.tags}} alert-dismissible fade-show' {% endif %} >{{message}}
+            <button type="button" class="close " data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+{% endfor %}
+{% endif %}
+{% endblock ms %}
+{% block content %}
+<form action="" method="POST" novalidate>
+{% csrf_token %}
+{% if pf.non_field_errors %}
+{% for error in pf.non_field_errors %}
+<p> {{error}} </p>
+{% endfor %}
+{% endif %}
+{% for f in pf %}
+<div class='form-group text-white'>{{f.label_tag}} {{f}} <span class='text-warning'> {{f.errors|striptags}} </span> <br></div>
+{% endfor %} 
+<button type="submit" class=" btn btn-primary form-control my-4">Add</button>
+</form>
+<a href=" {% url 'dashboard' %} " class="btn btn-success">Back To Dashboard</a>
+{% endblock content %}

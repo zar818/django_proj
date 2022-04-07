@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(75, 74, 70);
+}
+.jumbo-color{
+    background-color: rgb(83, 82, 81);
+}
+.nav-width{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+
+.logo-div{
+    padding-left: 2.5rem;
+}
+.already-account-login {
+    text-decoration-line: None;
+}
+.heading{
+    margin-top: .5rem;
+}

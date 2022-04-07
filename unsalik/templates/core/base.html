@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} </title>
+    
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.css' %} ">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            {% block content %} {% endblock content %}
+        </div>
+    </div>
+    <div class="container">
+      <div class="row">{% block content1 %} {% endblock content1 %}</div>
+    </div>
+    <script src=" {% static 'bootstrap.js' %} "></script>
+    <script src=" {% static 'jquery.js' %} "></script>
+    <script src=" {% static 'popper.js' %} "></script>
+</body>
+ </html>
+<!--
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown button
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+
+  
+
+   -->

@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="container center">
+    {% if messages %}
+        {% for message in messages %}
+            <span {% if message.tags %} class='alert-{{message.tags}}' > {{message}} </span>{% endif %}
+        {% endfor %}
+    {% endif %}
+<form action="/dashboard/" method="POST" class="" novalidate>
+{% csrf_token %}
+<div class="container p-5">
+{{form.as_p}}
+<button type="submit">Submit</button>
+</div>
+</form>
+<div>
+{% for s in st %}
+<form action=" {% url 'delete' s.id %} " method='POST'>
+<span> {{s.name}} {{s.email}}
+{% csrf_token %}
+<button type="submit" class='btn btn-sm btn-danger'>Delete</button>
+</form>
+<a href="{% url 'update' s.id %}" class="btn btn-sm btn-info ">Edit</a>
+</span>
+{% endfor %}
+</div>
+</div>
+{% endblock content %}

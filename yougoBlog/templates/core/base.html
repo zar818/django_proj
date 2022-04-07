@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href=" {% static 'css/bootstrap.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/all_style.css'%} ">
+    <title> {% block title %}{% endblock title %} | OnlyYougo </title>
+</head>
+
+<body>
+    <div class="container-fluid mx-auto">
+        <div class="row">
+            {% include 'all/nav.html' %}
+        </div>
+    </div>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12'>
+                {% block ms %}{% endblock ms %}
+            </div>
+        </div>
+        <div class="row">
+            {% block side %}{% endblock side %}
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+
+    <script src=" {% static 'js/bootstrap.js' %} "></script>
+    <script src=" {% static 'js/jquery.js' %} "></script>
+    <script src=" {% static 'js/pooper.js' %} "></script>
+</body>
+
+</html>

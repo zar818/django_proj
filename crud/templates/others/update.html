@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <span {% if message.tags %} class='alert-{{message.tags}} alert-dismissible fade-show' role='alert' >{{message}} <span aria-hidden='true'> &times; </span> </span>{% endif %}
+        
+    {% endfor %}
+{% endif %}
+
+<form action="" method='POST' class='form-control' novalidate>
+{% csrf_token %}
+{% for i in sav %}
+    {{i.label_tag}} {{i}} {{i.errors}} 
+{% endfor %}
+
+<button type="submit" class="btn btn-sm alert alert-info">Update</button>
+</form>
+{% endblock content %}

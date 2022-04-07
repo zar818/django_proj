@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}{% endblock title %} </title>
+    {% comment %} <link rel="stylesheet" href=" {% static 'css/bootstrap.min.css' %} "> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+  
+    {% block style %}{% endblock style %}
+</head>
+<body>
+    <nav class='navbar'>
+        <div class="logo">
+           <a href=""> <img src=" {% static 'media/logo.png' %} " alt="" srcset=""></a>
+        </div>
+        <div class="navbar-navbar">
+            <ul class="navbar-nav">
+            <li><a href="{% url 'home' %} ">Home</a> </li>
+            <li><a href="{% url 'about' %}">About</a> </li>
+            <li><a href="{% url 'about' %}">Articles</a> </li>
+            <li><a href="{% url 'about' %}">Services</a> </li>
+            </ul>
+        </div>
+    
+        <div class="navbar-navbar">
+            <ul class="navbar-auth">
+                {% if request.user.is_authenticated %}
+                <li> <a href=" {% url 'profile' %} ">Account</a> </li>
+                <li> <a href=" {% url 'logout' %} ">Logout</a> </li>
+                 {% else %}   
+                <li><a href="{% url 'sign' %} ">Signup</a> </li>
+                <li><a href=" {% url 'login' %} ">Login</a> </li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %} 
+    
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}EditProfile{% endblock title %}
+{% block ms %} 
+    {% if messages %}
+        {% for message in messages %}
+            <div {% if message.tags %} class='alert alert-{{message.tags}} alert-dismissible fade-show' {% endif %} >{{message}}
+            <button type="button" class="close " data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+{% endfor %}
+{% endif %}
+{% endblock ms %}
+{% block content %}
+<div class="col-md-5 text-white">
+<form action="" method="post" novalidate>
+{% csrf_token %}
+{% for fm in form %}
+<div class="form-group">
+{{fm.label_tag}} {{fm}} <span class='text-warning'>{{fm.errors}}</span> <br>
+</div>
+{% endfor %}
+<button type="submit" class='btn btn-info form-control my-2'>Update</button>
+
+</form>
+</div>
+<a href="{% url 'changepass' %}" class="btn btn-secondary my-2">Change Password</a>
+<a href=" {% url 'dashboard' %} " class="btn btn-success">Back To Dashboard</a>
+{% endblock content %}

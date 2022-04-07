@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="card bg-dark text-white">
+    <img src=" {% static 'media/158898704_273197544172922_192118298683368856_o.jpg' %} " class="card-img" alt="..." height="250px">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
+    </div>
+</div>
+{% endblock content %}
+{% block content1 %}
+{% for i in img %}
+<div class="card" style="width: 18rem;">
+    <img src="{{i.art.url}} " class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{i.art_desc}}</p>
+      <p class="card-text">{{i.user}}| {{i.date}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+{% endfor %}
+{% endblock content1 %}

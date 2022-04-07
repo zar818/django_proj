@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+{% load static %} 
+{% block title %}{% endblock title %} 
+{% block style %}
+<style>
+    body{
+        background-image: url('/static/media/login.jpg') ;
+        background-size: cover;
+    }
+</style>
+{% endblock style %}
+{% block content %}
+    <div class="container">
+    <h1>Login</h1>
+    {% if messages %}
+    {% for message in messages %}
+       <div {% if message.tags %} class="message message-{{message.tags}}" {% endif %}>{{message}}</div>
+    {% endfor %}
+    {% endif %}
+    <form action="" method="POST" novalidate>
+        {% csrf_token %} 
+        <div class="non_filed">
+                {% if form.non_field_errors %}
+                {% for error in form.non_field_error %}
+                <span class="non_field_errors"></span>
+                {% endfor %}
+                
+                {% endif %}
+
+        </div>
+        {% for f in form %}
+        <p class="error">{{f.errors|striptags}}</p>
+        <div class="box"> {{f}} </div>
+        {% endfor %}
+        <!-- <div class="box">
+            <input type="password" placeholder="Password"	required maxlength="15">
+        </div> -->
+        <input type="submit" class="btn" value="Login" />
+        </form>
+        <a href="#" class="btns">Forget Password?</a>
+        <a href=" {% url 'sign' %} " class="btns">Create Account</a>
+        
+        <hr />
+        <p>Or
+            <br> Login With</p>
+        <div class="icon">
+            <a href="" >
+                <img src="{% static 'media\google_logo.svg' %}" class="ico" alt="" width=20px/>
+            </a>
+            <a href="">
+            <img  src="{% static 'media\github_logo.svg' %}" class="ico " alt="" />
+            </a>
+            <a href="" >
+                <img src="{% static 'media\facebook_logo.svg' %}" class="ico " alt=""/>
+            </a>
+            
+           
+        </div>
+    </div>
+
+{% endblock content %}

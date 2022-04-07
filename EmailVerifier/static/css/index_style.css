@@ -1,0 +1,160 @@
+/*I found this Code on codepen.io/ItsDekuSenpai.And I modified it.                 */
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Montserrat', sans-serif;
+}
+body{
+  background:#242424;
+  margin: 0;
+  padding: 0;
+  font-family:'Montserrat', sans-serif;
+  --similar-color:#9254C8;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: space-around;
+  
+}
+.logo >a> img{
+  width: 3em;
+  /* margin-top: 2em; */
+  padding-top: 2em;
+}
+.navbar-navbar>ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+  list-style-type: none;
+}
+.navbar-navbar>ul>li>a{
+  text-decoration: none;
+  margin-left: 2em;
+  
+}
+/* .navbar-nav{
+  
+} */
+.navbar-navbar > .navbar-auth{
+  padding-left: 5em;
+}
+.navbar-auth > li > a{
+  background-color: var(--similar-color);
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+}
+.container{
+  background:#545454;
+  border-radius:10px;
+  width: 25vw;
+  margin-top: 3em;
+  margin-left: 33em;
+  /* transform: translate(-50%, -50%); */
+  color:white;
+  text-align: center;
+  border-top: 5px solid var(--similar-color);
+  padding: 20px;
+}
+.container h1{
+  font-size:35px;
+  margin-top:40px;
+  margin-bottom:30px;
+}
+.message{
+  color: #fff;
+  background-color: rgb(101, 207, 115);
+  padding: 8px;
+
+}
+/* .message-success{
+  
+} */
+.message-danger{
+  color: #fff;
+  background-color: #f14562;
+}
+.box{
+  width:260px;
+  height:40px;
+  background:#f1f1f1b3;
+  border-radius:10px;
+  margin:10px auto;
+}
+.btn{
+  font-family:'Montserrat', sans-serif;
+  width:260px;
+  height:40px;
+  background:var(--similar-color);
+  border-radius:10px;
+  margin:14px auto;
+  display:block;
+  font-size:16px;
+  border:none;
+  color:white;
+  cursor:pointer;
+  transition:0.4s all;
+}
+.btn:hover{
+  background:#3498db;
+}
+.box input{
+  font-family:'Montserrat', sans-serif;
+  background:none;
+  border:none;
+  outline:none;
+  text-align:center;
+  width:90%;
+  line-height:37px;
+  font-size:16px;
+  color:#333;
+}
+.btns{
+  display:block;
+  width:260px;
+  padding:10px 0;
+  text-decoration:none;
+  color:white;
+  text-align:center;
+  margin: auto;
+  transition:0.4s all;
+}
+.btns:hover{
+  border-radius: 5px;
+}
+
+a:hover{
+  background:#00000040;
+}
+.account_query >a{
+  text-decoration-line: none;
+  color: #3257ff;
+  background: none;
+}
+.ico{
+  margin:10px 20px 0px 20px;
+  width: 20px;
+}
+/* .icon_github{
+  color:black;
+}
+.icon_google{
+  color:#c41b1b;
+}
+.icon_fb{
+  color:#002fa6;
+} */
+.icon>a:hover{
+  background-color: none;
+  cursor:pointer;
+  padding: 15px 10px;
+}
+
+
+.error{
+  color:red;
+}

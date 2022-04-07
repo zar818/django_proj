@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="col-sm-8 ">
+<p class="text-white my-5">This Home page</p>
+</div>
+{% if request.user.is_authenticated %}
+{% for p in pm %}
+<div class="col-sm-7 center jumbotron jumbotron-fluid jumbo-color my-3">
+<div class="container">
+<h2 class="display-4 font-weight-bold">{{p.title}}</h2>
+<p class="lead">{{p.date}}</p>
+ <p>{{p.body}}</p>
+</div>
+</div> 
+{% endfor %}
+{% else %}
+<div class="col-sm-7 center jumbotron jumbotron-fluid jumbo-color">
+<div class="container">
+<h2 class="display-4 font-weight-bold">OnlyYougo</h2>
+<p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quisquam, dolorum at tempora obcaecati
+     laudantium et hic magni rem unde similique omnis qui illo doloremque impedit libero deleniti odio quod.</p>
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolor eveniet sit beatae perspiciatis officia, id velit? Volupt
+     corporis libero quae dicta voluptates eveniet iusto dolores? Iusto nostrum numquam culpa in odit vel debitis. Tempore necessitatibus delectus officia ab repudiandae, perspiciatis est deserunt incidunt nisi harum explicabo quae molestiae distinctio rerum a, voluptatum reiciendis quia atque eligendi esse accusantium, porro minima vel suscipit? Ipsa quaerat vero, quis deserunt libero ut enim impedit unde saepe. Cupiditate, earum, illo accusamus sunt odit, dolorem doloremque possimus cumque
+      iusto quo omnis ex eveniet. Temporibus perferendis dignissimos quae numquam doloremque officia sunt! Vitae, provident atque.</p>
+</div>
+</div> 
+{% endif %}
+{% endblock content %}

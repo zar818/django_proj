@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Sign In{% endblock title %}
+{% block ms %} 
+    {% if messages %}
+        {% for message in messages %}
+            <div {% if message.tags %} class='alert alert-{{message.tags}} alert-dismissible fade show' {% endif %} >{{message}}
+            <button type="button" class="close " data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+{% endfor %}
+{% endif %}
+{% endblock ms %}
+{% block content %}
+<form action="" method="POST" novalidate>
+{% csrf_token %}
+<div class='my-5 mx-0'>
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<span class='alert alert-danger '>{{error}}</span>
+{% endfor %}
+{% endif %}
+</div>
+{% for fm in form %}
+<div class="form-group text-white text-bold"> {{fm.label_tag}} {{fm}} <small class='text-warning'> {{fm.errors|striptags}} </small> </div><br>
+{% endfor %}
+
+<div class='my-2'>
+<button type="submit" class='btn btn-primary'>Log in</button>
+</div>
+</form>
+<p class="text-white ">Already have an account? <a class="already-account-login" href="{% url 'loggingin'%}">Log In</a> </p>
+{% endblock content %}

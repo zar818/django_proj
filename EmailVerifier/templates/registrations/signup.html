@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %} 
+{% block title %}{% endblock title %} 
+{% block style %}
+<style>
+    body{
+        background-image: url('/static/media/signup.jpg') ;
+        background-size: cover;
+    }
+</style>
+{% endblock style %}
+{% block content %}
+    <div class="container">
+    <h1>SignUp</h1>
+    {% if messages %}
+    {% for message in messages %}
+       <div {% if message.tags %} class="message message-{{message.tags}}" {% endif %}>{{message}}</div>
+    {% endfor %}
+    {% endif %}
+    <form action="" method="POST" novalidate>
+        {% csrf_token %} {% for f in form %}
+        <p class="error"> {{f.errors|striptags}}</p>
+        <!-- <div> {{f.label}}</div> -->
+        <div class="box">{{f}} 
+        </div>
+        {% endfor %}
+        <!-- <div class="box">
+            <input type="password" placeholder="Password"	required maxlength="15">
+        </div> -->
+        <input type="submit" class="btn" value="SignUp" />
+        </form>
+        <div class="account_query">
+            Already have an Account?
+         <a href="{% url 'login' %}" >Login</a>
+        </div>
+        <hr />
+        <br>
+        <p>Or <br> SignUp With</p>
+        <div class="icon">
+            <a href="" >
+                <img src="{% static 'media\google_logo.svg' %}" class="ico" alt="" width=20px/>
+            </a>
+            <a href="">
+            <img  src="{% static 'media\github_logo.svg' %}" class="ico " alt="" />
+            </a>
+            <a href="" >
+                <img src="{% static 'media\facebook_logo.svg' %}" class="ico " alt=""/>
+            </a>
+            
+           
+        </div>
+    </div>
+
+{% endblock content %}

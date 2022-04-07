@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}{% endblock title %}-ZShop </title>
+    <link href=" {% static 'fontawesome/css/all.css' %}" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href=" {% static 'css/bootstrap.css' %}" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="{% static 'css/templatemo-diagoona.css' %} " rel="stylesheet" />
+</head>
+<body>
+    <div>
+        {% include 'core/nav.html' %}
+    </div>
+    
+    <div class="tm-row">
+        <div class="tm-col-left">
+            {% block content1 %}
+            {% endblock content1 %}
+        </div>
+        <main class="tm-col-right">
+            <section class="tm-content">
+                <h2 class="mb-5 tm-content-title">Diagoona HTML Template</h2>
+                <p class="mb-5">Diagoona is provided by TemplateMo website. You are allowed to use this template for your websites. You are NOT allowed to redistribute this template ZIP file for a download purpose on any template collection website.</p>
+                <hr class="mb-5">
+                <p class="mb-5">Diagoona is Bootstrap v4.4.1 layout. This BG is 50% transparent. You can set the background images auto play settings (true or false in line number 33) in templatemo-script.js file in js folder.</p>                        
+                <a href="about.html" class="btn btn-primary">Continue...</a>
+            </section>
+        </main>
+    </div>
+</div>
+    
+
+
+    {% block content2 %}
+    
+    {% endblock content2 %}
+
+    {% block content3 %}
+    
+    {% endblock content3 %}
+
+    <script src=" {% static 'js/jquery.js' %} "></script>
+    <script src=" {% static 'js/popper.js' %} "></script>
+    <script src=" {% static 'js/bootstrap.js' %} "></script>
+    <script src=" {% static 'js/jquerybck.js' %} "></script>
+    <!-- <script src=" {% static 'js/templatemo-script.js' %} "></script> -->
+</body>
+</html>

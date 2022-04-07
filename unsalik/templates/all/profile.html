@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{% endblock title %}
+{% block content %}
+{% for d in d1 %}
+<div class="card" style="width: 18rem;">
+    <img src="{{d.art.url}} " class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{d.art_desc}}</p>
+      <p class="card-text">{{d.user}}| {{d.date}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+{% endfor %}
+{{d2}}
+{{d3}}
+{% endblock content %}

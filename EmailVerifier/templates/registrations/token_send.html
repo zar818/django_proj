@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class='token_mail' style="color: #fff;width: 50%;margin: 10em 20em;">
+    A Verification Email has been sent your {{request.user.email}}. 
+    Please check your email.
+    <br>
+    <br>
+    <button type="submit" style="padding: 10px;border-radius: 5px; background-color: blueviolet;">Resent</button>
+</div>
+{% endblock content %} 

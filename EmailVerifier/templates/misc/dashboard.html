@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% block title %}{% endblock title %}
+{% block style %}
+<style>
+    body{
+        color:white;
+    }
+</style>
+{% endblock style %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+       <div {% if message.tags %} class="message-{{message.tags}}" {% endif %}></div>
+    {% endfor %}
+    {% endif %}
+
+<p>{{user.id}} </p>
+<p>{{user.username}}</p>
+<p>{{user.first_name}}</p>
+<p>{{user.last_name}}</p>
+<p>{{user.email}}</p>
+<p>{{user.age}}</p>
+<p>{{user.country}}</p>
+<hr>
+{{name}}
+
+{% endblock content %}
