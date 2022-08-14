@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import CustomUser, Profile
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.utils.translation import gettext_lazy as _
 # Register your models here.
@@ -26,3 +26,6 @@ class CustomUserAdmin(admin.ModelAdmin):
     )
     search_fields = ('username', 'first_name', 'last_name', 'email')
     ordering = ('username',)
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display=('id','user','auth_token')

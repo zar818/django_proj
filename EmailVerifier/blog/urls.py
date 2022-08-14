@@ -9,5 +9,6 @@ urlpatterns = [
     path('dashboard/',views.dashboard,name='dashboard'),
     path('user/logout/',views.LogoutView.as_view(),name='logout'),
     path('token_send/',views.token_send,name='token'),
-    path('success/',views.success_mail,name='succs')
+    path('success/',views.success_mail,name='succs'),
+    path('(<uidb64>[0-9A-Za-z_\-]+)/(<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',views.verify,name='activate')
 ]

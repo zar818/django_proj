@@ -135,10 +135,9 @@ EMAIL_BACKEND='django.core.mail.backends.stmp.EmailBackend'
 EMAIL_HOST='stmp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_POST=587
-# EMAIL_HOST_USER= # email.id
-# EMAIL_HOST_PASSWORD=
+EMAIL_HOST_USER= 'usamaraheem818@gmail.com'
+EMAIL_HOST_PASSWORD='zar818@Usama'
 
 LOGIN_REDIRECT_URL=reverse_lazy('profile')
 LOGOUT_REDIRECT_URL=reverse_lazy('login')
 # REDIRECT_FIELD_NAME=reverse_lazy('dashboard')
-
